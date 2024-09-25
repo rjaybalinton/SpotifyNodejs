@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= song.title %> by <%= song.artist %></title>
+    <link rel="stylesheet" href="/stylesong.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= song.title %> by <%= song.artist %></h1>
+        <img src="/uploads/1727211998056.jpg" alt="<%= song.title %> cover"> <!-- Use forward slashes -->
+        <p>Image URL: <%= song.image %></p> <!-- Debugging line -->
+        <audio controls>
+            <source src="<%= song.file_path %>" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="lyrics">
+            <p><strong>Lyrics:</strong></p>
+            <p><%= song.lyrics %></p>
+        </div>
+        <a class="back-link" href="/">Back to Playlist</a>
+    </div>
+</body>
+</html>

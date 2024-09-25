@@ -1,0 +1,109 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Light background */
+    color: #333; /* Dark text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container Styling */
+.container {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background-color: white; /* White background for the form */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+}
+
+/* Heading Styling */
+h1 {
+    color: #1db954; /* Spotify green */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Light border */
+    background-color: #f9f9f9; /* Light background for inputs */
+    font-size: 1rem;
+    color: #333; /* Dark text for inputs */
+    box-sizing: border-box;
+    transition: border-color 0.3s; /* Smooth transition for border */
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #1db954; /* Green border on focus */
+    background-color: #ffffff; /* White background on focus */
+}
+
+/* Textarea Styling */
+textarea {
+    height: 120px; /* Fixed height for textarea */
+    resize: none; /* Disable resizing */
+}
+
+/* Button Styling */
+button {
+    background-color: #1db954; /* Spotify green */
+    color: white; /* White text */
+    padding: 12px;
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem;
+    width: 100%; /* Full width */
+    margin-top: 10px; /* Margin above the button */
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+button:hover {
+    background-color: #14833b; /* Darker green on hover */
+}
+
+/* Cancel Link */
+.back-link {
+    display: inline-block;
+    margin-top: 20px; /* Margin above the link */
+    color: #1db954; /* Spotify green */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Bold text */
+    font-size: 1rem;
+    transition: color 0.3s; /* Smooth transition for color */
+}
+
+.back-link:hover {
+    color: #14833b; /* Darker green on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Padding for smaller screens */
+        max-width: 90%; /* Maximum width for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Smaller font size for heading */
+    }
+
+    button {
+        padding: 10px; /* Smaller padding for button */
+        font-size: 0.9rem; /* Smaller font size for button */
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Song</title>
+    <link rel="stylesheet" href="/style1.css">
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Song</h1>
+        <form action="/add" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Song Title" required>
+            <input type="text" name="artist" placeholder="Artist" required>
+            <textarea name="lyrics" placeholder="Lyrics"></textarea>
+            
+            <input type="file" name="imageFile" accept="image/*" required>
+            <input type="file" name="songFile" accept="audio/*" required>
+            
+            <button type="submit">Add Song</button>
+            <a href="/" class="back-link">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

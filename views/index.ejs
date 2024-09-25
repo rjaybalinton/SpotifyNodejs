@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Playlist</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>My Playlist</h1>
+    
+    <!-- Button to Add New Song -->
+    <a href="/add" class="add-song-button">Add New Song</a>
+
+    <div class="song-container">
+      <% songs.forEach(song => { %>
+      <div class="song-card">
+          <div class="song-image">
+              <a href="/song/<%= song.id %>">
+                  <img src="<%= song.image %>" alt="<%= song.title %>">
+              </a>
+          </div>
+          <div class="song-info">
+              <h2><a href="/song/<%= song.id %>"><%= song.title %></a></h2>
+              <p>by <%= song.artist %></p> <!-- Moved artist under title -->
+              <audio controls>
+                  <source src="<%= song.file_path %>" type="audio/mpeg">
+                  Your browser does not support the audio tag.
+              </audio>
+              <!-- Removed lyrics display -->
+          </div>
+          <div class="song-options">
+              <form action="/edit/<%= song.id %>" method="GET">
+                  <button type="submit" class="edit-btn">Edit</button>
+              </form>
+              <form action="/delete/<%= song.id %>" method="POST">
+                  <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this song?')">Delete</button>
+              </form>
+          </div>
+      </div>
+      <% }); %>
+  </div>
+  
+    <script>
+        function openSongModal(title, artist, lyrics, filePath, image) {
+            document.getElementById('modal-song-title').innerText = title;
+            document.getElementById('modal-song-artist').innerText = 'by ' + artist;
+            document.getElementById('modal-song-lyrics').innerText = lyrics; // Lyrics can be used in modal
+            document.getElementById('modal-song-source').src = filePath;
+            document.getElementById('modal-song-audio').load();
+            document.getElementById('song-modal').style.display = 'block';
+        }
+
+        function closeSongModal() {
+            document.getElementById('song-modal').style.display = 'none';
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('song-modal');
+            if (event.target == modal) {
+                closeSongModal();
+            }
+        }
+    </script>
+</body>
+</html>
